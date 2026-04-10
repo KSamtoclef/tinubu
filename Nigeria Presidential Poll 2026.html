@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://direct-link-script.vercel.app/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nigeria Presidential Poll 2026</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #008751;
+      --green-dark: #005e38;
+      --green-light: #e6f4ed;
+      --green-mid: #c2e3d0;
+      --white: #ffffff;
+      --gray-50: #f8f9fa;
+      --gray-100: #f1f3f4;
+      --gray-200: #e2e6ea;
+      --gray-400: #9aa5b1;
+      --gray-600: #52606d;
+      --gray-800: #1f2933;
+      --red: #c0392b;
+      --red-light: #fdecea;
+      --gold: #c9962b;
+      --gold-light: #fdf3df;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f0f4f1;
+      color: var(--gray-800);
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--green-dark);
+      color: white;
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-top {
+      /* display: flex; */
+      /* align-items: center; */
+      /* justify-content: space-between; */
+      /* padding: 14px 24px; */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-crest {
+      width: 48px;
+      height: 48px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 4px;
+      overflow: hidden;
+    }
+
+    .logo-crest svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .brand-text h1 {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.65);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .flag-strip {
+      display: flex;
+      gap: 0;
+      height: 5px;
+    }
+
+    .flag-strip div:nth-child(1),
+    .flag-strip div:nth-child(3) {
+      background: var(--green);
+      flex: 1;
+    }
+
+    .flag-strip div:nth-child(2) {
+      background: white;
+      flex: 1;
+    }
+
+    /* .live-bar {
+      background: var(--green);
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    } */
+
+    .live-dot {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .dot-pulse {
+      width: 8px;
+      height: 8px;
+      background: #ff4d4f;
+      border-radius: 50%;
+      animation: pulse 1.4s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(1.3);
+      }
+    }
+
+    .live-stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 13px;
+    }
+
+    .live-stat strong {
+      color: white;
+      font-weight: 700;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* .container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+      display: grid;
+      gap: 24px;
+      background-color: red;
+    } */
+
+    .hero {
+      background: white;
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--green-dark), var(--green), var(--green-dark));
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gray-800);
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 span {
+      color: var(--green-dark);
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.6;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .poll-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .poll-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gray-800);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .poll-card .subtitle {
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-bottom: 20px;
+    }
+
+    .poll-row {
+      margin-bottom: 14px;
+    }
+
+    .poll-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .poll-label .name {
+      font-weight: 600;
+      color: var(--gray-800);
+    }
+
+    .poll-label .pct {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .poll-bar-track {
+      height: 12px;
+      background: var(--gray-100);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .poll-bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .bar-yes {
+      background: var(--green);
+    }
+
+    .bar-no {
+      background: #e74c3c;
+    }
+
+    .poll-counts {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+
+    .form-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 32px;
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-card .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green-light);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-label h3 {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .section-label p {
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-top: 1px;
+    }
+
+    .question-block {
+      margin-bottom: 30px;
+    }
+
+    .question-num {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .question-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gray-800);
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .options-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 16px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      font-size: 14px;
+      color: var(--gray-700, #374151);
+      user-select: none;
+    }
+
+    .option-label:hover {
+      border-color: var(--green);
+      background: var(--green-light);
+      color: var(--green-dark);
+    }
+
+    .option-label input[type="radio"] {
+      accent-color: var(--green);
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    .option-label input[type="radio"]:checked+span {
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    .option-label:has(input:checked) {
+      border-color: var(--green);
+      background: var(--green-light);
+    }
+
+    .options-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--gray-100);
+      margin: 8px 0 28px;
+    }
+
+    .submit-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      max-width: 380px;
+      padding: 16px 32px;
+      background: var(--green-dark);
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .submit-btn:hover {
+      background: var(--green);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(0, 135, 81, 0.35);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .submit-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .privacy-note {
+      font-size: 12px;
+      color: var(--gray-400);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px;
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+    }
+
+    .stat-card .stat-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+    }
+
+    .stat-card .stat-val {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--gray-800);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-card .stat-lbl {
+      font-size: 11px;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-weight: 600;
+    }
+
+    footer {
+      background: var(--green-dark);
+      color: rgba(255, 255, 255, 0.65);
+      text-align: center;
+      padding: 20px 24px;
+      font-size: 12px;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer span {
+      color: white;
+      font-weight: 600;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal-box {
+      background: white;
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      animation: popIn 0.3s ease;
+    }
+
+    @keyframes popIn {
+      from {
+        transform: scale(0.85);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .modal-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--green-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .modal-box h3 {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--gray-800);
+    }
+
+    .modal-box p {
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .modal-progress {
+      height: 4px;
+      background: var(--gray-100);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .modal-progress-fill {
+      height: 100%;
+      background: var(--green);
+      width: 0%;
+      transition: width 3s linear;
+    }
+
+    .modal-redirect-txt {
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+
+    .error-msg {
+      display: none;
+      font-size: 12px;
+      color: #e74c3c;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    .question-block.has-error .error-msg {
+      display: block;
+    }
+
+    .question-block.has-error .question-text {
+      color: #e74c3c;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      width: 100%;
+      flex-shrink: 0;
+      padding-bottom: 4px;
+    }
+
+    .carousel-next-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 22px;
+      background: white;
+      color: var(--green-dark);
+      border: 1.5px solid var(--green-dark);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .carousel-next-btn:hover {
+      background: var(--green-light);
+    }
+
+    .carousel-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 18px;
+      background: transparent;
+      color: var(--gray-600);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .carousel-back-btn:hover {
+      background: var(--gray-100);
+      border-color: var(--gray-400);
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero h2 {
+      font-size: 20px;
+    }
+
+    .options-grid-2 {
+      grid-template-columns: 1fr;
+    }
+
+    .live-bar {
+      gap: 12px;
+    }
+
+    .form-card {
+      padding: 20px;
+    }
+
+    .hero {
+      padding: 24px 18px;
+    }
+
+
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px 16px 50px;
+}
+
+.header-top {
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 16px;
+}
+
+.brand-text h1 {
+  font-size: 15px;
+}
+
+.live-bar {
+  padding: 8px 16px;
+  flex-wrap: wrap;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* MOBILE: 1 CARD PER ROW */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  gap: 5px;
+
+  }
+}
+
+.stat-card,
+.poll-card,
+.form-card,
+.hero {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.hero {
+  padding: 20px 16px;
+}
+
+.hero h2 {
+  font-size: 18px;
+}
+
+.form-card {
+  padding: 20px 16px;
+}
+
+.options-grid-2 {
+  grid-template-columns: 1fr;
+}
+
+button {
+  max-width: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  width: 100%;
+  padding: 0 2px;
+}
+
+#carousel-track {
+  width: 100%;
+}
+
+#share-section {
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  word-break: break-word;
+}
+
+footer {
+  width: 100%;
+  max-width: 100%;
+  padding: 16px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px 12px 40px;
+  }
+
+  .hero h2 {
+    font-size: 16px;
+  }
+
+  .option-label {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .submit-btn,
+  #whatsapp-btn,
+  #submit-btn {
+    font-size: 14px;
+    padding: 14px;
+  }
+}
+  </style>
+<style>._modal_ib2ay_25{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;z-index:2147483649}._modal_ib2ay_25 ._background_ib2ay_36{position:absolute;top:0;left:0;width:100%;height:100%;transition:.3s;opacity:0;overflow:auto;background-color:color-mix(in srgb,#000000 60%,white 0%);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._modal_ib2ay_25 ._window_ib2ay_48{min-width:280px;max-width:560px;background:#fff;border-radius:6px;padding:16px;z-index:1;position:relative;opacity:0;transform:scale(.01);transition:.3s;display:flex;flex-direction:column;box-shadow:0 2px 6px 2px #00000026,0 1px 2px #0000004d;overflow:auto}._modal_ib2ay_25 ._window_ib2ay_48 ._loading_ib2ay_64{position:absolute;width:100%;height:100%;top:0;left:0;background:#000000b3}._modal_ib2ay_25 ._window_ib2ay_48 ._loading_ib2ay_64 img{width:100px}._modal_visible_ib2ay_76 ._background_ib2ay_36{opacity:1}._modal_visible_ib2ay_76 ._window_ib2ay_48{opacity:1;transform:scale(1)}._modal_hidden_ib2ay_83 ._background_ib2ay_36{opacity:0}._modal_hidden_ib2ay_83 ._window_ib2ay_48{opacity:0;transform:scale(.01)}._modal_hiddenDone_ib2ay_90 ._background_ib2ay_36{opacity:0}._modal_hiddenDone_ib2ay_90 ._window_ib2ay_48{opacity:0;transform:scale(.01)}._button_1xtgk_25{border-radius:8px;border:unset;cursor:pointer;transition:.3s}._button_1xtgk_25:disabled{opacity:.3;cursor:not-allowed}._button_default_1xtgk_35{background:transparent;color:#43434e}._button_default_1xtgk_35:hover{background:#f3f4f7}._button_default_1xtgk_35:active{background:#dfdfe4}._button_default_1xtgk_35 ._svg_1xtgk_45 *{fill:#43434e}._button_primary_1xtgk_48{background:#007eff;color:#fff}._button_primary_1xtgk_48:hover{background:#3398ff}._button_primary_1xtgk_48:active{background:#66b2ff}._button_primary_1xtgk_48 ._svg_1xtgk_45 *{fill:#fff}._button_link_1xtgk_61{background:transparent;color:#007eff}._button_link_1xtgk_61:hover{color:#3398ff}._button_link_1xtgk_61:active{color:#66b2ff}._button_link_1xtgk_61 ._svg_1xtgk_45 *{fill:#007eff}._button_link_1xtgk_61 ._svg_1xtgk_45 *:hover{fill:#3398ff}._button_link_1xtgk_61 ._svg_1xtgk_45 *:active{fill:#66b2ff}._button_large_1xtgk_80{padding:12px 16px}._button_large_1xtgk_80 *{font-size:16px}._button_medium_1xtgk_86{padding:8px 16px}._button_medium_1xtgk_86 *{font-size:16px}._button_small_1xtgk_92{padding:4px;min-height:24px}._button_small_1xtgk_92 *{font-size:12px}._flexBox_9xdww_14{flex-flow:unset}._gap_extraTiny_9xdww_18{gap:2px}._gap_tiny_9xdww_22{gap:4px}._gap_extraSmall_9xdww_26{gap:6px}._gap_small_9xdww_30{gap:8px}._gap_medium_9xdww_34{gap:16px}._gap_normal_9xdww_38{gap:24px}._gap_large_9xdww_42{gap:32px}._gap_xLarge_9xdww_46{gap:48px}._gap_xxLarge_9xdww_50{gap:56px}._gap_extraLarge_9xdww_54{gap:64px}._column_9xdww_58{flex-direction:column!important}._flexWrap_9xdww_62{flex-wrap:wrap}._size_tiny_13ock_19,._size_tiny_13ock_19 *{font-size:12px}._size_small_13ock_23,._size_small_13ock_23 *{font-size:16px}._size_medium_13ock_27,._size_medium_13ock_27 *{font-size:18px}._size_large_13ock_31,._size_large_13ock_31 *{font-size:32px}._weight_thin_13ock_35,._weight_thin_13ock_35 *{font-weight:100}._weight_extraLight_13ock_39,._weight_extraLight_13ock_39 *{font-weight:200}._weight_light_13ock_43,._weight_light_13ock_43 *{font-weight:300}._weight_normal_13ock_47,._weight_normal_13ock_47 *{font-weight:400}._weight_medium_13ock_51,._weight_medium_13ock_51 *{font-weight:500}._weight_semiBold_13ock_55,._weight_semiBold_13ock_55 *{font-weight:600}._weight_bold_13ock_59,._weight_bold_13ock_59 *{font-weight:700}._weight_extraBold_13ock_63,._weight_extraBold_13ock_63 *{font-weight:800}._lineHeight_13ock_67{line-height:100%}._extraTiny_dg7lc_14{padding:2px}._extraTinyVR_dg7lc_18{padding-top:2px;padding-bottom:2px}._extraTinyHR_dg7lc_23{padding-left:2px;padding-right:2px}._extraTinyTop_dg7lc_28{padding-top:2px}._extraTinyRight_dg7lc_32{padding-right:2px}._extraTinyBottom_dg7lc_36{padding-bottom:2px}._extraTinyLeft_dg7lc_40{padding-left:2px}._tiny_dg7lc_44{padding:4px}._tinyVR_dg7lc_48{padding-top:4px;padding-bottom:4px}._tinyHR_dg7lc_53{padding-left:4px;padding-right:4px}._tinyTop_dg7lc_58{padding-top:4px}._tinyRight_dg7lc_62{padding-right:4px}._tinyBottom_dg7lc_66{padding-bottom:4px}._tinyLeft_dg7lc_70{padding-left:4px}._extraSmall_dg7lc_74{padding:6px}._extraSmallVR_dg7lc_78{padding-top:6px;padding-bottom:6px}._extraSmallHR_dg7lc_83{padding-left:6px;padding-right:6px}._extraSmallTop_dg7lc_88{padding-top:6px}._extraSmallRight_dg7lc_92{padding-right:6px}._extraSmallBottom_dg7lc_96{padding-bottom:6px}._extraSmallLeft_dg7lc_100{padding-left:6px}._small_dg7lc_104{padding:8px}._smallVR_dg7lc_108{padding-top:8px;padding-bottom:8px}._smallHR_dg7lc_113{padding-left:8px;padding-right:8px}._smallTop_dg7lc_118{padding-top:8px}._smallRight_dg7lc_122{padding-right:8px}._smallBottom_dg7lc_126{padding-bottom:8px}._smallLeft_dg7lc_130{padding-left:8px}._medium_dg7lc_134{padding:16px}._mediumVR_dg7lc_138{padding-top:16px;padding-bottom:16px}._mediumHR_dg7lc_143{padding-left:16px;padding-right:16px}._mediumTop_dg7lc_148{padding-top:16px}._mediumRight_dg7lc_152{padding-right:16px}._mediumBottom_dg7lc_156{padding-bottom:16px}._mediumLeft_dg7lc_160{padding-left:16px}._normal_dg7lc_164{padding:24px}._normalVR_dg7lc_168{padding-top:24px;padding-bottom:24px}._normalHR_dg7lc_173{padding-left:24px;padding-right:24px}._normalTop_dg7lc_178{padding-top:24px}._normalRight_dg7lc_182{padding-right:24px}._normalBottom_dg7lc_186{padding-bottom:24px}._normalLeft_dg7lc_190{padding-left:24px}._large_dg7lc_194{padding:32px}._largeVR_dg7lc_198{padding-top:32px;padding-bottom:32px}._largeHR_dg7lc_203{padding-left:32px;padding-right:32px}._largeTop_dg7lc_208{padding-top:32px}._largeRight_dg7lc_212{padding-right:32px}._largeBottom_dg7lc_216{padding-bottom:32px}._largeLeft_dg7lc_220{padding-left:32px}._xLarge_dg7lc_224{padding:48px}._xLargeVR_dg7lc_228{padding-top:48px;padding-bottom:48px}._xLargeHR_dg7lc_233{padding-left:48px;padding-right:48px}._xLargeTop_dg7lc_238{padding-top:48px}._xLargeRight_dg7lc_242{padding-right:48px}._xLargeBottom_dg7lc_246{padding-bottom:48px}._xLargeLeft_dg7lc_250{padding-left:48px}._xxLarge_dg7lc_254{padding:56px}._xxLargeVR_dg7lc_258{padding-top:56px;padding-bottom:56px}._xxLargeHR_dg7lc_263{padding-left:56px;padding-right:56px}._xxLargeTop_dg7lc_268{padding-top:56px}._xxLargeRight_dg7lc_272{padding-right:56px}._xxLargeBottom_dg7lc_276{padding-bottom:56px}._xxLargeLeft_dg7lc_280{padding-left:56px}._extraLarge_dg7lc_284{padding:64px}._extraLargeVR_dg7lc_288{padding-top:64px;padding-bottom:64px}._extraLargeHR_dg7lc_293{padding-left:64px;padding-right:64px}._extraLargeTop_dg7lc_298{padding-top:64px}._extraLargeRight_dg7lc_302{padding-right:64px}._extraLargeBottom_dg7lc_306{padding-bottom:64px}._extraLargeLeft_dg7lc_310{padding-left:64px}
+</style></head>
+
+<body>
+
+  <header>
+    <div class="header-top">
+      <div class="brand">
+        <div class="logo-crest">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="50" cy="52" rx="38" ry="35" fill="#008751"></ellipse>
+            <path d="M50 20 L50 80" stroke="white" stroke-width="5" fill="none"></path>
+            <path d="M20 52 L80 52" stroke="white" stroke-width="5" fill="none"></path>
+            <path d="M50 20 C30 30 18 42 18 52 C18 62 30 74 50 80 C70 74 82 62 82 52 C82 42 70 30 50 20Z" fill="none" stroke="white" stroke-width="2"></path>
+            <circle cx="50" cy="16" r="8" fill="#c9962b"></circle>
+            <path d="M44 14 L50 6 L56 14 L53 14 L53 22 L47 22 L47 14Z" fill="white"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>NaijaPoll — Citizens' Voice</h1>
+          <span>Federal Republic of Nigeria · 2026</span>
+        </div>
+      </div>
+      <!-- <div style="text-align:right; font-size:12px; color:rgba(255,255,255,0.6); line-height:1.5;">
+        Independent &amp; Anonymous<br />
+        <span style="color:rgba(255,255,255,0.9); font-weight:600;">Open Survey</span>
+      </div> -->
+    </div>
+    <div class="live-bar">
+      <div class="live-dot">
+        <div class="dot-pulse"></div>
+        Live
+      </div>
+      <div class="stat-divider"></div>
+      <div class="live-stat">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <strong id="live-active">1,825</strong> active now
+      </div>
+      <div class="stat-divider"></div>
+      <div class="live-stat">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 11 12 14 22 4"></polyline>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+        </svg>
+        <strong id="live-votes">47,566</strong> votes cast
+      </div>
+      <div class="stat-divider"></div>
+      <div class="live-stat">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Updated <strong id="live-time">just now</strong>
+      </div>
+    </div>
+    <div class="flag-strip">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#e6f4ed;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008751" stroke-width="2.5">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <div class="stat-val" id="stat-votes">47,566</div>
+        <div class="stat-lbl">Votes Cast</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#fff8e6;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9962b" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 8v4l3 3"></path>
+          </svg>
+        </div>
+        <div class="stat-val" id="stat-active">1,825</div>
+        <div class="stat-lbl">Active Users</div>
+      </div>
+
+    </div>
+
+    <div class="hero">
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        Official Citizens' Poll
+      </div>
+      <h2>Should <span>President Bola Ahmed Tinubu</span><br>Serve Another Term?</h2>
+      <p>Your voice matters. This anonymous survey captures the pulse of Nigerians on the performance and future of the
+        current administration. All responses are confidential.</p>
+    </div>
+
+    <div class="poll-card">
+      <h3>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008751" stroke-width="2.5" style="flex-shrink:0">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        Live Poll Results — Another Tenure for Tinubu?
+      </h3>
+      <p class="subtitle">Based on <span id="poll-total">47,566</span> responses so far</p>
+
+      <div class="poll-row">
+        <div class="poll-label">
+          <span class="name">Yes — He should stay</span>
+          <span class="pct" style="color:var(--green)" id="yes-pct">38%</span>
+        </div>
+        <div class="poll-bar-track">
+          <div class="poll-bar-fill bar-yes" id="yes-bar" style="width: 38%;"></div>
+        </div>
+        <div class="poll-counts">
+          <span id="yes-count">18,075 votes</span>
+          <span>Yes</span>
+        </div>
+      </div>
+
+      <div class="poll-row">
+        <div class="poll-label">
+          <span class="name">No — Time for change</span>
+          <span class="pct" style="color:#e74c3c" id="no-pct">62%</span>
+        </div>
+        <div class="poll-bar-track">
+          <div class="poll-bar-fill bar-no" id="no-bar" style="width: 62%;"></div>
+        </div>
+        <div class="poll-counts">
+          <span id="no-count">29,491 votes</span>
+          <span>No</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+
+      <div class="section-label">
+        <div class="section-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#008751" stroke-width="2.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+        </div>
+        <div>
+          <h3>Citizens' Questionnaire</h3>
+          <p>3 questions · Less than 1 minute</p>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:0; margin-bottom:28px;">
+        <div id="dot-1" style="width:32px; height:32px; border-radius:50%; background:var(--green-dark); color:white; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.3s;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div id="line-1" style="flex: 1 1 0%; height: 3px; background: var(--green-dark); transition: background 0.4s;"></div>
+        <div id="dot-2" style="width: 32px; height: 32px; border-radius: 50%; background: var(--green-dark); color: white; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: 0.3s;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div id="line-2" style="flex: 1 1 0%; height: 3px; background: var(--green-dark); transition: background 0.4s;"></div>
+        <div id="dot-3" style="width: 32px; height: 32px; border-radius: 50%; background: var(--green-dark); color: white; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: 0.3s;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+      </div>
+
+      <div style="overflow:hidden; position:relative;">
+        <div id="carousel-track" style="display: flex; transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1); will-change: transform; transform: translateX(-200%);">
+
+          <div class="carousel-slide">
+            <div class="question-num">Question 1 of 3</div>
+            <div class="question-text">Under President Tinubu's administration, do you feel Nigeria is heading in the
+              right direction?</div>
+            <div class="options-grid">
+              <label class="option-label"><input type="radio" name="q1" value="yes_strongly" onchange="onOptionChange(1)"><span>Yes — things are clearly improving</span></label>
+              <label class="option-label"><input type="radio" name="q1" value="yes_slowly" onchange="onOptionChange(1)"><span>Somewhat — progress is slow but noticeable</span></label>
+              <label class="option-label"><input type="radio" name="q1" value="no_same" onchange="onOptionChange(1)"><span>No — things are about the same as before</span></label>
+              <label class="option-label"><input type="radio" name="q1" value="no_worse" onchange="onOptionChange(1)"><span>No — things have gotten worse</span></label>
+            </div>
+            <p class="error-msg" id="err-1" style="display: none;">Please select an option to continue.</p>
+            <div style="display:flex; justify-content:flex-end; margin-top:24px;">
+              <button onclick="nextSlide(1)" class="carousel-next-btn">Next question <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg></button>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="question-num">Question 2 of 3</div>
+            <div class="question-text">How has your personal standard of living changed since Tinubu became president in
+              May 2023?</div>
+            <div class="options-grid">
+              <label class="option-label"><input type="radio" name="q2" value="much_better" onchange="onOptionChange(2)"><span>Much better — my life has significantly improved</span></label>
+              <label class="option-label"><input type="radio" name="q2" value="slightly_better" onchange="onOptionChange(2)"><span>Slightly better — small improvements here and
+                  there</span></label>
+              <label class="option-label"><input type="radio" name="q2" value="no_change" onchange="onOptionChange(2)"><span>About the same — nothing has changed for me</span></label>
+              <label class="option-label"><input type="radio" name="q2" value="much_worse" onchange="onOptionChange(2)"><span>Much worse — hardship has increased significantly</span></label>
+            </div>
+            <p class="error-msg" id="err-2" style="display: none;">Please select an option to continue.</p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px;">
+              <button onclick="prevSlide(2)" class="carousel-back-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg> Back</button>
+              <button onclick="nextSlide(2)" class="carousel-next-btn">Next question <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg></button>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="question-num">Question 3 of 3</div>
+            <div class="question-text">Should President Bola Ahmed Tinubu be re-elected to serve another term in office?
+            </div>
+            <div class="options-grid options-grid-2">
+              <label class="option-label" style="justify-content:center;flex-direction:column;text-align:center;gap:8px;padding:20px 12px;">
+                <input type="radio" name="q3" value="yes" onchange="onOptionChange(3)">
+                <span style="font-size:15px;font-weight:700;color:var(--green-dark);">Yes, Re-elect</span>
+                <span style="font-size:12px;color:var(--gray-400);font-weight:400;">He deserves another chance</span>
+              </label>
+              <label class="option-label" style="justify-content:center;flex-direction:column;text-align:center;gap:8px;padding:20px 12px;">
+                <input type="radio" name="q3" value="no" onchange="onOptionChange(3)">
+                <span style="font-size:15px;font-weight:700;color:#c0392b;">No, Move On</span>
+                <span style="font-size:12px;color:var(--gray-400);font-weight:400;">Nigeria needs new leadership</span>
+              </label>
+            </div>
+            <p class="error-msg" id="err-3" style="display: none;">Please select an option to continue.</p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px;">
+              <button onclick="prevSlide(3)" class="carousel-back-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg> Back</button>
+              <button onclick="revealShare()" id="done-btn" class="carousel-next-btn" style="background:var(--green-dark);color:white;border-color:var(--green-dark);">Done — See next step
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="share-section" style="display: block; margin-top: 28px; border-top: 1px solid var(--gray-100); padding-top: 28px; animation: 0.5s ease 0s 1 normal none running fadeSlideUp;">
+
+        <div style="background:#fff8e6; border:1.5px solid #f0c040; border-radius:var(--radius-sm); padding:18px 20px; margin-bottom:20px;">
+          <!-- <div
+            style="font-size:13px; font-weight:700; color:#7a4f00; margin-bottom:10px; display:flex; align-items:center; gap:6px;">
+            <span style="font-size:16px;">🚨</span> One more step — share to unlock your submission
+          </div>
+          <p style="font-size:13px; color:#5a3e00; line-height:1.65; margin:0;">
+            Nigerians are suffering. Fuel jumped from ₦700 to ₦1,500. Food prices are rising daily. Small businesses are
+            shutting down. <strong>Share this message 5 times on WhatsApp</strong> to make your voice louder — then your
+            vote unlocks.
+          </p> -->
+
+
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
+            <div style="width:44px; height:44px; background:#fdecea; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:22px;">
+              😡</div>
+            <div>
+              <div style="font-size:18px; font-weight:800; color:#c0392b; line-height:1.2;">NIGERIANS ARE SUFFERING
+              </div>
+              <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">Your vote has been recorded, share to
+                submit</div>
+            </div>
+          </div>
+
+          <div style="background:#fff8f8; border-left:3px solid #e74c3c; border-radius:0 var(--radius-sm) var(--radius-sm) 0; padding:14px 16px; margin-bottom:18px;">
+            <p style="font-size:14px; color:#7a1a1a; font-weight:700; margin-bottom:8px; line-height:1.5;">Fuel has
+              jumped
+              from ₦700 to ₦1,500… and nobody is saying anything?</p>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px;">
+              <li style="font-size:13px; color:#5a2020; display:flex; align-items:center; gap:7px;"><span style="color:#e74c3c; font-size:15px;">•</span> Transport is killing us</li>
+              <li style="font-size:13px; color:#5a2020; display:flex; align-items:center; gap:7px;"><span style="color:#e74c3c; font-size:15px;">•</span> Food prices are rising daily</li>
+              <li style="font-size:13px; color:#5a2020; display:flex; align-items:center; gap:7px;"><span style="color:#e74c3c; font-size:15px;">•</span> Small businesses are shutting down</li>
+            </ul>
+            <p style="font-size:13px; font-weight:700; color:#7a1a1a; margin-top:10px; margin-bottom:0;">How long will
+              we
+              keep quiet?</p>
+          </div>
+
+          <div style="background:#c0392b; border-radius:var(--radius-sm); padding:12px 16px; margin-bottom:20px; display:flex; align-items:center; gap:10px;">
+            <span style="font-size:18px; flex-shrink:0;">🚨</span>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:3px;">Join the protest and make
+                your
+                voice count NOW:</div>
+              <a href="https://rebrand.ly/nigeriavoice?_t=1775710970881" style="font-size:12px; color:#fff; text-decoration:underline; word-break:break-all;">https://rebrand.ly/nigeriavoice?_t=1775710970881</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:var(--radius-sm); padding:16px 20px; margin-bottom:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span style="font-size:13px; font-weight:700; color:var(--gray-800);">Shares completed</span>
+            <span style="font-size:13px; font-weight:800; color:var(--green-dark);" id="share-count-label">0 / 5</span>
+          </div>
+          <div style="height:10px; background:var(--gray-200); border-radius:5px; overflow:hidden;">
+            <div id="share-progress-bar" style="height:100%; background:var(--green); border-radius:5px; width:0%; transition:width 0.4s ease;">
+            </div>
+          </div>
+          <div style="margin-top:8px; font-size:12px; color:var(--gray-400);" id="share-hint-txt">Share 5 times on
+            WhatsApp to unlock the Submit button</div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <button id="whatsapp-btn" onclick="shareToWhatsApp()" style="width:100%; max-width:400px; padding:15px 28px; background:#25D366; color:white; font-size:15px; font-weight:700; border:none; border-radius:var(--radius-sm); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:all 0.18s ease;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.84L.057 23.571a.5.5 0 0 0 .611.611l5.73-1.453A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.497-5.24-1.367l-.374-.216-3.873.982.999-3.764-.237-.389A9.955 9.955 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"></path>
+            </svg>
+            Share to WhatsApp
+            <span id="wa-badge" style="background:rgba(0,0,0,0.18); border-radius:12px; padding:2px 9px; font-size:12px; font-weight:800;">0/5</span>
+          </button>
+
+          <button id="submit-btn" onclick="handleSubmit()" disabled="" style="width:100%; max-width:400px; padding:15px 28px; background:var(--gray-200); color:var(--gray-400); font-size:15px; font-weight:700; border:none; border-radius:var(--radius-sm); cursor:not-allowed; display:flex; align-items:center; justify-content:center; gap:10px; transition:all 0.3s ease;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Submit My Vote — Locked
+          </button>
+
+          <div style="font-size:12px; color:var(--gray-400); text-align:center; display:flex; align-items:center; gap:5px;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            100% anonymous · No personal data collected
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 NaijaPoll — Citizens' Voice ·
+    <span>Federal Republic of Nigeria</span> ·
+    Independent. Anonymous. Transparent.
+  </footer>
+
+
+  <script>
+    const REDIRECT_URL = "https://rebrand.ly/nigeriavoice?_t=1775710970881";
+    const REDIRECT_URL2 = "https://omg10.com/4/10846307";
+    const WA_MESSAGE = encodeURIComponent(
+      "NIGERIANS ARE SUFFERING 😡\n\nFuel has jumped from ₦700 to ₦1500 … and nobody is saying anything?\n\n🔴 Transport is killing us\n🔴 Food prices are rising daily\n🔴 Small businesses are shutting down\n\nHow long will we keep quiet?\n\n🚨 Join the protest and make your voice count NOW:\nhttps://rebrand.ly/nigeriavoice?_t=1775710970881"
+    );
+
+    let currentSlide = 0;
+    let shareCount = 0;
+    const MAX_SHARES = 5;
+
+    function goToSlide(index) {
+      currentSlide = index;
+      document.getElementById('carousel-track').style.transform = `translateX(-${index * 100}%)`;
+      updateDots();
+    }
+
+    function updateDots() {
+      for (let i = 1; i <= 3; i++) {
+        const dot = document.getElementById('dot-' + i);
+        const answered = document.querySelector(`input[name="q${i}"]:checked`);
+        if (i - 1 < currentSlide || answered) {
+          dot.style.background = 'var(--green-dark)';
+          dot.style.color = 'white';
+          dot.innerHTML = answered
+            ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>'
+            : i;
+        } else if (i - 1 === currentSlide) {
+          dot.style.background = 'var(--green-dark)';
+          dot.style.color = 'white';
+          dot.textContent = i;
+        } else {
+          dot.style.background = 'var(--gray-200)';
+          dot.style.color = 'var(--gray-400)';
+          dot.textContent = i;
+        }
+      }
+      for (let i = 1; i <= 2; i++) {
+        const line = document.getElementById('line-' + i);
+        line.style.background = i <= currentSlide ? 'var(--green-dark)' : 'var(--gray-200)';
+      }
+    }
+
+    function onOptionChange(qNum) {
+      document.getElementById('err-' + qNum).style.display = 'none';
+      updateDots();
+    }
+
+    function nextSlide(from) {
+      const selected = document.querySelector(`input[name="q${from}"]:checked`);
+      if (!selected) {
+        document.getElementById('err-' + from).style.display = 'block';
+        return;
+      }
+      document.getElementById('err-' + from).style.display = 'none';
+      goToSlide(from);
+    }
+
+    function prevSlide(from) {
+      goToSlide(from - 2);
+    }
+
+    function revealShare() {
+      const selected = document.querySelector('input[name="q3"]:checked');
+      if (!selected) {
+        document.getElementById('err-3').style.display = 'block';
+        return;
+      }
+      document.getElementById('err-3').style.display = 'none';
+      updateDots();
+
+      const shareSection = document.getElementById('share-section');
+      shareSection.style.display = 'block';
+      shareSection.style.marginTop = '28px';
+      setTimeout(() => shareSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
+
+    function shareToWhatsApp() {
+      window.open("https://wa.me/?text=" + WA_MESSAGE, "_blank");
+      shareCount++;
+      if (shareCount > MAX_SHARES) shareCount = MAX_SHARES;
+      updateShareUI();
+    }
+
+    function updateShareUI() {
+      const pct = (shareCount / MAX_SHARES) * 100;
+      document.getElementById('share-progress-bar').style.width = pct + '%';
+      document.getElementById('share-count-label').textContent = shareCount + ' / ' + MAX_SHARES;
+      document.getElementById('wa-badge').textContent = shareCount + '/' + MAX_SHARES;
+      if (shareCount >= MAX_SHARES) {
+        document.getElementById('share-hint-txt').textContent = '✅ All 5 shares done! You can now submit your vote.';
+        document.getElementById('share-hint-txt').style.color = 'var(--green-dark)';
+        document.getElementById('share-hint-txt').style.fontWeight = '600';
+        const btn = document.getElementById('submit-btn');
+        btn.disabled = false;
+        btn.style.background = 'var(--green-dark)';
+        btn.style.color = 'white';
+        btn.style.cursor = 'pointer';
+        btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Submit My Vote — Unlocked';
+        btn.onmouseover = () => { btn.style.background = 'var(--green)'; btn.style.transform = 'translateY(-1px)'; };
+        btn.onmouseout = () => { btn.style.background = 'var(--green-dark)'; btn.style.transform = 'none'; };
+      } else {
+        const left = MAX_SHARES - shareCount;
+        document.getElementById('share-hint-txt').textContent = left + ' more share' + (left > 1 ? 's' : '') + ' needed to unlock Submit';
+      }
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('yes-bar').style.width = '38%';
+        document.getElementById('no-bar').style.width = '62%';
+      }, 400);
+    });
+
+    let totalVotes = 47392, activeUsers = 1847;
+    function fmt(n) { return n.toLocaleString(); }
+    function updateLiveStats() {
+      totalVotes += Math.floor(Math.random() * 4);
+      activeUsers = Math.max(800, activeUsers + Math.floor(Math.random() * 7) - 3);
+      const yesVotes = Math.floor(totalVotes * 0.38);
+      const noVotes = totalVotes - yesVotes;
+      document.getElementById('live-votes').textContent = fmt(totalVotes);
+      document.getElementById('live-active').textContent = fmt(activeUsers);
+      document.getElementById('stat-votes').textContent = fmt(totalVotes);
+      document.getElementById('stat-active').textContent = fmt(activeUsers);
+      document.getElementById('poll-total').textContent = fmt(totalVotes);
+      document.getElementById('yes-count').textContent = fmt(yesVotes) + ' votes';
+      document.getElementById('no-count').textContent = fmt(noVotes) + ' votes';
+      document.getElementById('live-time').textContent = 'just now';
+      setTimeout(() => { document.getElementById('live-time').textContent = '1s ago'; }, 1200);
+    }
+    setInterval(updateLiveStats, 2800);
+
+    function handleSubmit() {
+      if (shareCount < MAX_SHARES) return;
+      window.location.href = REDIRECT_URL2;
+    }
+  </script>
+
+
+<div id="extension-piigj"></div></body><div></div></html>
